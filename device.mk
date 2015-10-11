@@ -136,11 +136,11 @@ PRODUCT_PACKAGES += \
     lights.kanuti
 
 # NFC packages
-#PRODUCT_PACKAGES += \
-#    com.android.nfc_extras \
-#    NfcNci \
-#    Tag \
-#    nfc_nci.pn54x.default
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    NfcNci \
+    Tag \
+    nfc_nci.msm8916
 
 #GPS
 PRODUCT_PACKAGES += \
