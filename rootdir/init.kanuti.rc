@@ -19,8 +19,6 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
 
 on init
-    # Support legacy libs
-    symlink /system/vendor/lib/egl /egl
 
     # BoringSSL hacks
     export LD_PRELOAD "/system/lib64/libboringssl-compat.so"
@@ -145,6 +143,10 @@ on boot
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
+    write /sys/devices/system/cpu/cpu4/online 1
+    write /sys/devices/system/cpu/cpu5/online 1
+    write /sys/devices/system/cpu/cpu6/online 1
+    write /sys/devices/system/cpu/cpu7/online 1
     write /sys/module/msm_thermal/core_control/enabled 1
 
     # bluetooth device
