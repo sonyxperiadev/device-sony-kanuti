@@ -99,7 +99,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 # BT definitions for Qualcomm solution
 BLUETOOTH_HCI_USE_MCT := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/kanuti/bluetooth
-BBOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # GPS definitions for Qualcomm solution
