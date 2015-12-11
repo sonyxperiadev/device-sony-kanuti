@@ -63,6 +63,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 TARGET_RECOVERY_FSTAB = device/sony/kanuti/rootdir/fstab.kanuti
 
+# QCOM Hardware
+BOARD_USES_QCOM_HARDWARE := true
+
 # GFX
 USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
