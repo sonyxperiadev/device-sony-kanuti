@@ -197,6 +197,12 @@ PRODUCT_PACKAGES += \
     InCallUI \
     Launcher3 \
     messaging
+    
+# FM  
+RODUCT_PACKAGES += \
+	FMRadio \  
+	libfmjni  
+
 
 PRODUCT_PACKAGES += \
     libemoji
