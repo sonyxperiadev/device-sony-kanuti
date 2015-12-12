@@ -153,6 +153,11 @@ PRODUCT_PACKAGES += \
     libloc_eng \
     libgps.utils \
     gps.msm8916
+    
+# RIL
+PRODUCT_PACKAGES += \ 
+     libcnefeatureconfig \ 
+     libxml2 
 
 #WLAN
 PRODUCT_PACKAGES += \
