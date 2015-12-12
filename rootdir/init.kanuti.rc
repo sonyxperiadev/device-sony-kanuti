@@ -406,6 +406,11 @@ service dhcpcd_bt-pan /system/bin/dhcpcd -BKLG
 service iprenew_bt-pan /system/bin/dhcpcd -n
     disabled
     oneshot
+    
+service loc_launcher /system/bin/loc_launcher 
+    #loc_launcher will start as root and set its uid to gps 
+    class late_start 
+    group gps inet net_raw qcom_diag net_admin wifi 
 
 #BT service
 service hciattach /system/bin/sh /system/etc/init.kanuti.bt.sh
