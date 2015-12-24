@@ -84,6 +84,9 @@ on post-fs-data
     chmod 2770 /data/audio
 
     mkdir /data/data/media 0770 media media
+    
+    # Create a dir for pin-cache component
+    mkdir /cache/pc 0770 radio system
 
     mkdir /data/misc/camera 0770 camera camera
 
