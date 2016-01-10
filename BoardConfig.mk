@@ -122,6 +122,9 @@ EXTENDED_FONT_FOOTPRINT := true
 BUILD_KERNEL := true
 -include vendor/sony/kernel/KernelConfig.mk
 
+# Include build helpers for QCOM proprietary
+-include vendor/qcom/proprietary/common/build/proprietary-build.mk
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
