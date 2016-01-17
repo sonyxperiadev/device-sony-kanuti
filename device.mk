@@ -123,9 +123,6 @@ PRODUCT_PACKAGES += \
     libqdutils \
     libqdMetaData
 
-PRODUCT_PACKAGES += \
-    libion
-
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
@@ -191,6 +188,10 @@ PRODUCT_PACKAGES += \
     InCallUI \
     Launcher3 \
     messaging
+
+PRODUCT_PACKAGES += \
+    libion \
+    libxml2
 
 PRODUCT_PACKAGES += \
     libemoji
