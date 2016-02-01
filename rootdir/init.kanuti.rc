@@ -22,9 +22,6 @@ on init
     # Support legacy libs
     symlink /system/vendor/lib/egl /egl
 
-    # BoringSSL hacks
-    export LD_PRELOAD "libboringssl-compat.so"
-
     symlink /dev/block/platform/soc.0/7824900.sdhci /dev/block/bootdevice
 
     # Set permissions for firmware partition
