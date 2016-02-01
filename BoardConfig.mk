@@ -26,22 +26,12 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a9
 
-TARGET_NO_RADIOIMAGE := true
-TARGET_NO_BOOTLOADER := true
-TARGET_NO_RECOVERY := false
-TARGET_NO_KERNEL := false
-
 TARGET_USES_64_BIT_BINDER := true
 
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
-
-BOARD_KERNEL_BOOTIMG := true
-BOARD_CUSTOM_MKBOOTIMG := mkqcdtbootimg
-BOARD_MKBOOTIMG_ARGS := --dt_dir $(OUT)/dtbs
-BOARD_MKBOOTIMG_ARGS +=  --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --dt_version 2
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
@@ -51,8 +41,6 @@ TARGET_USES_UNCOMPRESSED_KERNEL := true
 BOARD_KERNEL_CMDLINE :=console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=kanuti user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 
 BOARD_KERNEL_CMDLINE +=androidboot.selinux=permissive dwc3.maximum_speed=high lpm_levels.sleep_disabled=1 coherent_pool=8M earlyprintk=msm_hsl_uart,0x78b0000
 
-TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2675703808
 #Reserve space for data encryption (4399824896-16384)
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 4399808512
@@ -60,27 +48,6 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 TARGET_RECOVERY_FSTAB = device/sony/kanuti/rootdir/fstab.kanuti
-
-# GFX
-USE_OPENGL_RENDERER := true
-TARGET_USES_ION := true
-TARGET_USES_OVERLAY := true
-TARGET_USES_SF_BYPASS := true
-TARGET_USES_C2D_COMPOSITION := true
-
-MAX_EGL_CACHE_KEY_SIZE := 12*1024
-MAX_EGL_CACHE_SIZE := 2048*1024
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-
-# Audio
-BOARD_USES_ALSA_AUDIO := true
-AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
-
-# Camera
-USE_DEVICE_SPECIFIC_CAMERA := true
-BOARD_QTI_CAMERA_32BIT_ONLY := true
-BOARD_QTI_CAMERA_V2 := true
 
 # Wi-Fi definitions for Qualcomm solution
 BOARD_HAS_QCOM_WLAN := true
@@ -101,34 +68,11 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/kanuti/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
-# GPS definitions for Qualcomm solution
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
-TARGET_NO_RPC := true
-
-# Charger
-BOARD_CHARGER_ENABLE_SUSPEND := true
-
-TARGET_SYSTEM_PROP := device/sony/kanuti/system.prop
-
 # NFC
 BOARD_NFC_CHIPSET := pn547
 BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
 
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
-
-# Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-    WITH_DEXPREOPT ?= true
-endif
-
-BUILD_KERNEL := true
--include vendor/sony/kernel/KernelConfig.mk
-
-# Include build helpers for QCOM proprietary
--include vendor/qcom/proprietary/common/build/proprietary-build.mk
-
-BOARD_SEPOLICY_DIRS += \
-    device/sony/kanuti/sepolicy
+# SELinux
+BOARD_SEPOLICY_DIRS += device/sony/kanuti/sepolicy
 
 BOARD_SEPOLICY_UNION += \
