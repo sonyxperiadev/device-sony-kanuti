@@ -31,13 +31,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/init.recovery.kanuti.rc:root/init.recovery.kanuti.rc \
-    $(SONY_ROOT)/init.recovery.kanuti.rc:root/init.recovery.kanuti64_32.rc \
     $(SONY_ROOT)/init.kanuti.rc:root/init.kanuti.rc \
-    $(SONY_ROOT)/init.kanuti.rc:root/init.kanuti64_32.rc \
     $(SONY_ROOT)/init.kanuti.usb.rc:root/init.kanuti.usb.rc \
     $(SONY_ROOT)/init.kanuti.pwr.rc:root/init.kanuti.pwr.rc \
-    $(SONY_ROOT)/ueventd.kanuti.rc:root/ueventd.kanuti.rc \
-    $(SONY_ROOT)/ueventd.kanuti.rc:root/ueventd.kanuti64_32.rc
+    $(SONY_ROOT)/ueventd.kanuti.rc:root/ueventd.kanuti.rc
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
