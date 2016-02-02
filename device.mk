@@ -31,13 +31,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/fstab.kanuti:root/fstab.kanuti \
     $(SONY_ROOT)/init.recovery.kanuti.rc:root/init.recovery.kanuti.rc \
-    $(SONY_ROOT)/init.recovery.kanuti.rc:root/init.recovery.kanuti64_32.rc \
     $(SONY_ROOT)/init.kanuti.rc:root/init.kanuti.rc \
-    $(SONY_ROOT)/init.kanuti.rc:root/init.kanuti64_32.rc \
     $(SONY_ROOT)/init.kanuti.usb.rc:root/init.kanuti.usb.rc \
     $(SONY_ROOT)/init.kanuti.pwr.rc:root/init.kanuti.pwr.rc \
-    $(SONY_ROOT)/ueventd.kanuti.rc:root/ueventd.kanuti.rc \
-    $(SONY_ROOT)/ueventd.kanuti.rc:root/ueventd.kanuti64_32.rc
+    $(SONY_ROOT)/ueventd.kanuti.rc:root/ueventd.kanuti.rc
 
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
