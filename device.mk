@@ -16,8 +16,6 @@ SOMC_PLATFORM := kanuti
 
 SONY_ROOT = device/sony/kanuti/rootdir
 
-DEVICE_PACKAGE_OVERLAYS += device/sony/kanuti/overlay
-
 # Init
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/fstab.kanuti:root/fstab.kanuti \
