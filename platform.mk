@@ -19,15 +19,6 @@ SOMC_PLATFORM := kanuti
 
 SONY_ROOT := device/sony/kanuti/rootdir
 
-# Init
-PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/fstab.kanuti:root/fstab.kanuti \
-    $(SONY_ROOT)/init.recovery.kanuti.rc:root/init.recovery.kanuti.rc \
-    $(SONY_ROOT)/init.kanuti.rc:root/init.kanuti.rc \
-    $(SONY_ROOT)/init.kanuti.usb.rc:root/init.kanuti.usb.rc \
-    $(SONY_ROOT)/init.kanuti.pwr.rc:root/init.kanuti.pwr.rc \
-    $(SONY_ROOT)/ueventd.kanuti.rc:root/ueventd.kanuti.rc
-
 # Media
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
@@ -61,6 +52,11 @@ PRODUCT_COPY_FILES += \
 # Device Specific Hardware
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
+
+# Platform Init
+PRODUCT_PACKAGES += \
+    fstab.kanuti \
+    init.kanuti.pwr
 
 # NFC packages
 #PRODUCT_PACKAGES += \
