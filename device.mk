@@ -17,7 +17,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 SOMC_PLATFORM := kanuti
 
-SONY_ROOT = device/sony/kanuti/rootdir
+SONY_ROOT := device/sony/kanuti/rootdir
 
 # Media
 PRODUCT_COPY_FILES += \
