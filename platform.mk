@@ -12,9 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+$(call inherit-product, device/sony/common/common.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+
 SOMC_PLATFORM := kanuti
 
-SONY_ROOT = device/sony/kanuti/rootdir
+SONY_ROOT := device/sony/kanuti/rootdir
 
 # Media
 PRODUCT_COPY_FILES += \
