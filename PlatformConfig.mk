@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include device/sony/common/CommonConfig.mk
-
 TARGET_BOARD_PLATFORM := msm8916
 
 TARGET_ARCH := arm64
@@ -78,3 +76,5 @@ BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
 BOARD_SEPOLICY_DIRS += device/sony/kanuti/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+
+include device/sony/common/CommonConfig.mk
