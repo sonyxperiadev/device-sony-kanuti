@@ -59,11 +59,10 @@ PRODUCT_PACKAGES += \
     init.kanuti.pwr
 
 # NFC packages
-#PRODUCT_PACKAGES += \
-#    com.android.nfc_extras \
-#    NfcNci \
-#    Tag \
-#    nfc_nci.pn54x.default
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    NfcNci \
+    Tag
 
 # Audio
 PRODUCT_PACKAGES += \
