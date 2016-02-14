@@ -86,14 +86,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     keystore.msm8916
 
-# Lights
-PRODUCT_PACKAGES += \
-    lights.kanuti
-
-# Simple PowerHAL
-PRODUCT_PACKAGES += \
-    power.kanuti
-
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
