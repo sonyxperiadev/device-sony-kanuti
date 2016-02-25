@@ -65,7 +65,7 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.msm8916 \
+    audio.primary.msm8916
 
 # GFX
 PRODUCT_PACKAGES += \
