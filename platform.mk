@@ -86,8 +86,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     keystore.msm8916
 
-# SimToolKit
+# Telephony Packages (AOSP)
 PRODUCT_PACKAGES += \
+    InCallUI \
     Stk
 
 # Bluetooth
