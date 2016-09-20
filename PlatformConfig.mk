@@ -75,6 +75,10 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 # NFC
 NFC_NXP_CHIP_TYPE := PN547C2
 
+# FM definitions for Qualcomm solution
+BOARD_HAVE_QCOM_FM := true
+TARGET_QCOM_NO_FM_FIRMWARE := true
+
 # Props for hotplugging
 TARGET_SYSTEM_PROP += device/sony/kanuti/system.prop
 
