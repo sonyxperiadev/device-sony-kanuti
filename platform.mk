@@ -86,6 +86,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     keystore.msm8916
 
+# Qualcom FMRadio
+PRODUCT_PACKAGES += \
+    FMRadio
+
 # Telephony Packages (AOSP)
 PRODUCT_PACKAGES += \
     InCallUI \
