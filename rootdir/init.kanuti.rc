@@ -21,6 +21,8 @@ on init
 
 on fs
     mount_all ./fstab.kanuti
+    swapon_all ./fstab.kanuti
+
     restorecon_recursive /persist
     write /sys/kernel/boot_adsp/boot 1
 
