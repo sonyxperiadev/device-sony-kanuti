@@ -97,17 +97,8 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     disabled
     oneshot
 
-#BT service
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
-    class main
-    user bluetooth
-    group bluetooth system
-    disabled
-    oneshot
-    writepid /dev/cpuset/system-background/tasks
-
 on property:bluetooth.hciattach=true
-    start hciattach
+    setprop bluetooth.status on
 
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
