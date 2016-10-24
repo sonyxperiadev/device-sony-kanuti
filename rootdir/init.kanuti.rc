@@ -25,9 +25,12 @@ on fs
     write /sys/kernel/boot_adsp/boot 1
 
 on boot
-    #WCNSS enable
+    # WCNSS enable
     write /dev/wcnss_wlan 1
-
+    
+    # Bluetooth
+    chown system system /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
+    
     # add a cpuset for the camera daemon
     # we want all the little cores for camera
     mkdir /dev/cpuset/camera-daemon
@@ -53,8 +56,9 @@ service sensord /system/vendor/bin/sensord
 
 # OSS WLAN setup
 service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
-    class main
-    user root
+    class core
+    user system
+    group system bluetooth
     oneshot
     writepid /dev/cpuset/system-background/tasks
 
