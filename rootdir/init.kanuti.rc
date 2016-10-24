@@ -27,7 +27,10 @@ on fs
     write /sys/kernel/boot_adsp/boot 1
 
 on boot
-    #WCNSS enable
+    # Bluetooth
+    chown system system /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
+
+    # WCNSS enable
     write /dev/wcnss_wlan 1
 
     # add a cpuset for the camera daemon
@@ -56,8 +59,10 @@ service sensord /system/vendor/bin/sensord
 
 # OSS WLAN setup
 service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
-    class main
-    user root
+    class core
+    user system
+    group system bluetooth
+    disabled
     oneshot
     writepid /dev/cpuset/system-background/tasks
 
@@ -96,6 +101,10 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
+
+on property:vold.post_fs_data_done=1
+    # Generate Bluetooth MAC address file only when /data is ready
+    start macaddrsetup
 
 on property:bluetooth.hciattach=true
     setprop bluetooth.status on
