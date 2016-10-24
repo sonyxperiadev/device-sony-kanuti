@@ -25,8 +25,11 @@ on fs
     write /sys/kernel/boot_adsp/boot 1
 
 on boot
-    #WCNSS enable
+    # WCNSS enable
     write /dev/wcnss_wlan 1
+
+    # Bluetooth
+    chown system system /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
 
 service sensord /system/vendor/bin/sensord
     class main
@@ -35,8 +38,9 @@ service sensord /system/vendor/bin/sensord
 
 # OSS WLAN setup
 service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
-    class main
-    user root
+    class core
+    user system
+    group system bluetooth
     oneshot
 
 service wcnss_service /system/vendor/bin/wcnss_service
@@ -87,4 +91,3 @@ on property:bluetooth.hciattach=true
 
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
-
