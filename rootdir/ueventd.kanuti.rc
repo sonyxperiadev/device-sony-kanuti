@@ -113,9 +113,7 @@
 /sys/devices/soc/1a00000.qcom,mdss_mdp/qcom,mdss_fb_primary.126/leds/lcd-backlight max_brightness 0664 system system
 /sys/devices/soc/1a00000.qcom,mdss_mdp/qcom,mdss_fb_primary.126/leds/lcd-backlight brightness     0664 system system
 
-# IR Remote
-/dev/ttyHSL2 0660 system system /sys/devices/platform/ir_remote_control enable 0220 system system
-
+# Graphics Permissions
 /sys/devices/virtual/graphics/fb1/avi_itc             0664 system graphics
 /sys/devices/virtual/graphics/fb1/avi_cn0_1           0664 system graphics
 /sys/devices/virtual/graphics/fb1/hpd                 0664 system graphics
