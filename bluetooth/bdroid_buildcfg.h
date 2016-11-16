@@ -17,6 +17,22 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
+#include <cutils/properties.h>
+#include <string.h>
+
+inline const char* getBTDefaultName()
+{
+    char device[PROPERTY_VALUE_MAX];
+    property_get("ro.boot.hardware", device, "");
+
+    if (!strcmp("tulip", device)) {
+        return "Xperia M4 Aqua";
+    }
+
+    return "Xperia";
+}
+
+#define BTM_DEF_LOCAL_NAME getBTDefaultName()
 #define BTA_HOST_INTERLEAVE_SEARCH  TRUE
 
 #endif
