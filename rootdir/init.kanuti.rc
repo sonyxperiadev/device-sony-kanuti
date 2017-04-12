@@ -28,7 +28,7 @@ on fs
 
 on boot
     # WCNSS enable
-    write /dev/wcnss_wlan 1
+    write /dev/wcnss_wlan ""
     
     # Bluetooth
     chown system system /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
