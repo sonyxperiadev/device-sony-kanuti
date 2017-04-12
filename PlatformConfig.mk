@@ -78,6 +78,9 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 # NFC
 NFC_NXP_CHIP_TYPE := PN547C2
 
+# NFC firmware select
+NXP_CHIP_TYPE := PN547C2
+
 # FM definitions for Qualcomm solution
 BOARD_HAVE_ALTERNATE_FM := true
 BOARD_HAVE_QCOM_FM := true
