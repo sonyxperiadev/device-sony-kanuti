@@ -46,6 +46,10 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/usr/idc/cyttsp4_mt.idc:system/usr/idc/cyttsp4_mt.idc \
     $(SONY_ROOT)/system/usr/idc/cyttsp5_mt.idc:system/usr/idc/cyttsp5_mt.idc
 
+# RQBalance-PowerHAL configuration
+PRODUCT_COPY_FILES += \
+    $(SONY_ROOT)/system/etc/rqbalance_config.xml:system/etc/rqbalance_config.xml
+
 # Device Specific Hardware
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml \
