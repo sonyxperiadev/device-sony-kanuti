@@ -87,4 +87,7 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 # SELinux
 BOARD_SEPOLICY_DIRS += $(PLATFORM_COMMON_PATH)/sepolicy
 
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+
 include device/sony/common/CommonConfig.mk
