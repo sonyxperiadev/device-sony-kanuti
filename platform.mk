@@ -102,11 +102,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
 
-# RILD
-PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
-    ril.subscription.types=NV,RUIM
-
 # system prop for opengles version
 # 196609 is decimal for 0x30001 to
 # report major/minor versions as 3/1
