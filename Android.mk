@@ -1,4 +1,4 @@
-ifeq ($(filter-out tulip,$(TARGET_DEVICE)),)
+ifeq (kanuti,$(PRODUCT_PLATFORM))
 
 LOCAL_PATH := $(call my-dir)
 
