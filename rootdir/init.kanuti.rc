@@ -61,7 +61,7 @@ service sensord /system/vendor/bin/sensord
     writepid /dev/cpuset/system-background/tasks
 
 # OSS WLAN setup
-service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
+service macaddrsetup /system/vendor/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
     class core
     user system
     group system bluetooth
