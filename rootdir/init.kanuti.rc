@@ -54,14 +54,14 @@ on boot
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/camera-daemon/cpus 0-3
 
-service sensord /vendor/bin/sensord
+service sensord /system/vendor/bin/sensord
     class main
     user system
     group system
     writepid /dev/cpuset/system-background/tasks
 
 # OSS WLAN setup
-service macaddrsetup /vendor/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
+service macaddrsetup /system/vendor/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
     class core
     user system
     group system bluetooth
@@ -69,14 +69,14 @@ service macaddrsetup /vendor/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-w
     oneshot
     writepid /dev/cpuset/system-background/tasks
 
-service wcnss_service /vendor/bin/wcnss_service
+service wcnss_service /system/vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
     oneshot
     writepid /dev/cpuset/system-background/tasks
 
-service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
+service wpa_supplicant /system/vendor/bin/hw/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
