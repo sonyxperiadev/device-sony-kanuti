@@ -87,4 +87,7 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 # SELinux
 BOARD_SEPOLICY_DIRS += $(PLATFORM_COMMON_PATH)/sepolicy_platform
 
+# init_sony
+BOARD_USES_INIT_SONY := true
+
 include device/sony/common/CommonConfig.mk
