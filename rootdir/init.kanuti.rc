@@ -105,3 +105,6 @@ on property:hw.fm.init=0
 
 on property:hw.fm.init=1
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
+
+on property:ro.boot.baseband=msm
+    enable qmuxd
