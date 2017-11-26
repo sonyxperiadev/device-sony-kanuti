@@ -15,7 +15,6 @@
 # Platform path
 PLATFORM_COMMON_PATH := device/sony/kanuti
 
-PRODUCT_PLATFORM := kanuti
 TARGET_BOARD_PLATFORM := msm8916
 TARGET_KERNEL_VERSION := 4.4
 

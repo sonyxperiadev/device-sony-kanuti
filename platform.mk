@@ -130,3 +130,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qti.sensors.tilt_detector=false \
     ro.qti.sensors.dpc=false \
     ro.qti.sensors.wu=false
+
+# USB controller setup
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.usb.controller=msm_hsusb
