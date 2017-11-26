@@ -14,11 +14,11 @@ touch.filter.tfsw.f0.path = /system/lib64/touchfilter/roadrunner_ukf.so
 # Roadrunner
 touch.filter.RoadRunner.Enabled = 1
 touch.filter.RoadRunner.Debug = 0
-touch.filter.RoadRunner.c0.PredictionSteps = 2.8
-touch.filter.RoadRunner.c1.PredictionSteps = 4.2
-touch.filter.RoadRunner.c2.PredictionSteps = 6.3
-touch.filter.RoadRunner.c3.PredictionSteps = 8.3
-touch.filter.RoadRunner.FrameRate = 0.0078
+touch.filter.RoadRunner.c0.PredictionSteps = 2.2
+touch.filter.RoadRunner.c1.PredictionSteps = 3.4
+touch.filter.RoadRunner.c2.PredictionSteps = 5.2
+touch.filter.RoadRunner.c3.PredictionSteps = 6.8
+touch.filter.RoadRunner.FrameRate = 0.0087
 touch.filter.RoadRunner.PreSmoothingFactor = 0.2
 touch.filter.RoadRunner.PostSmoothingFactor = 0.1
 touch.filter.RoadRunner.DisplayPpi = 294
