@@ -81,4 +81,7 @@ NXP_CHIP_FW_TYPE := PN547C2
 # SELinux
 BOARD_SEPOLICY_DIRS += $(PLATFORM_COMMON_PATH)/sepolicy_platform
 
+# Platform witout a vendor partition
+TARGET_COPY_OUT_VENDOR := system/vendor
+
 include device/sony/common/CommonConfig.mk
