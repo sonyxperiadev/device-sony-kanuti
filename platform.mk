@@ -22,11 +22,14 @@ SOMC_PLATFORM := kanuti
 
 SONY_ROOT := $(PLATFORM_COMMON_PATH)/rootdir
 
+# Audio
+PRODUCT_COPY_FILES += \
+    $(SONY_ROOT)/system/etc/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt
+
 # Media
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
-    $(SONY_ROOT)/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml
+    $(SONY_ROOT)/vendor/etc/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(SONY_ROOT)/vendor/etc/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
 
 # Qualcomm WiFi
 PRODUCT_COPY_FILES += \
