@@ -40,19 +40,6 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
 
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2675703808
-#Reserve space for data encryption (4399824896-16384)
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 4399808512
-BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
-BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
-
 TARGET_RECOVERY_FSTAB = $(PLATFORM_COMMON_PATH)/rootdir/fstab.kanuti
 
 # Wi-Fi definitions for Qualcomm solution
@@ -80,5 +67,8 @@ NXP_CHIP_FW_TYPE := PN547C2
 
 # SELinux
 BOARD_SEPOLICY_DIRS += $(PLATFORM_COMMON_PATH)/sepolicy_platform
+
+# Platform witout a vendor partition
+TARGET_COPY_OUT_VENDOR := system/vendor
 
 include device/sony/common/CommonConfig.mk
