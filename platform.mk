@@ -22,6 +22,10 @@ SOMC_PLATFORM := kanuti
 
 SONY_ROOT := $(PLATFORM_COMMON_PATH)/rootdir
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(PLATFORM_COMMON_PATH)/overlay
+
 # Media
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
@@ -54,9 +58,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml
 
-# Platform Init
+# Platform power configuration
 PRODUCT_PACKAGES += \
-    fstab.kanuti \
     init.kanuti.pwr
 
 # Audio
