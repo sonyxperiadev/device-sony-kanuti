@@ -22,6 +22,10 @@ SOMC_PLATFORM := kanuti
 
 SONY_ROOT := $(PLATFORM_COMMON_PATH)/rootdir
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(PLATFORM_COMMON_PATH)/overlay
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/vendor/etc/aanc_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/aanc_tuning_mixer.txt
@@ -49,9 +53,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/vendor/etc/rqbalance_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/rqbalance_config.xml
 
-# Platform Init
+# Platform power configuration
 PRODUCT_PACKAGES += \
-    fstab.kanuti \
     init.kanuti.pwr
 
 # Audio
