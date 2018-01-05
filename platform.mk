@@ -22,10 +22,6 @@ SOMC_PLATFORM := kanuti
 
 SONY_ROOT := $(PLATFORM_COMMON_PATH)/rootdir
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-    $(PLATFORM_COMMON_PATH)/overlay
-
 # Media
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
