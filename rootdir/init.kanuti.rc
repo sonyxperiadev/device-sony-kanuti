@@ -36,25 +36,12 @@ service sensord /system/vendor/bin/sensord
     group system
     writepid /dev/cpuset/system-background/tasks
 
-# OSS WLAN setup
-service macaddrsetup /system/vendor/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
-    class core
-    user system
-    group system bluetooth
-    disabled
-    oneshot
-    writepid /dev/cpuset/system-background/tasks
-
 service wcnss_service /system/vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
     oneshot
     writepid /dev/cpuset/system-background/tasks
-
-on property:vold.post_fs_data_done=1
-    # Generate Bluetooth MAC address file only when /data is ready
-    start macaddrsetup
 
 on property:bluetooth.hciattach=true
     setprop bluetooth.status on
