@@ -17,8 +17,9 @@ import init.common.usb.rc
 import init.kanuti.pwr.rc
 
 on boot
-    # Bluetooth
+    # WLAN and BT MAC
     chown system system /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
 
     # WCNSS enable
     write /dev/wcnss_wlan 1
