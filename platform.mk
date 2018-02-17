@@ -46,6 +46,10 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/usr/idc/cyttsp4_mt.idc:system/usr/idc/cyttsp4_mt.idc \
     $(SONY_ROOT)/system/usr/idc/cyttsp5_mt.idc:system/usr/idc/cyttsp5_mt.idc
 
+# MSM IRQ Balancer configuration file
+PRODUCT_COPY_FILES += \
+    $(SONY_ROOT)/system/etc/msm_irqbalance.conf:system/etc/msm_irqbalance.conf
+
 # RQBalance-PowerHAL configuration
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/rqbalance_config.xml:system/etc/rqbalance_config.xml
