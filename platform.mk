@@ -128,3 +128,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # USB controller setup
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.usb.controller=msm_hsusb
+
+# WiFi MAC address path
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.wifi.addr_path=/sys/devices/soc/a000000.qcom,wcnss-wlan/wcnss_mac_addr
