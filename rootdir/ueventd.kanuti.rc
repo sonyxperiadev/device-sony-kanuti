@@ -108,22 +108,13 @@
 /sys/devices/soc.0/78ba000.i2c/i2c-6/6-0028  send_cmd    0200 nfc nfc
 
 # LED
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-0030/leds/led:* max_brightness          0644 root system
+/sys/devices/soc.0/78b6000.i2c/i2c-0/0-0030/leds/led:* max_brightness          0664 system system
 /sys/devices/soc.0/78b6000.i2c/i2c-0/0-0030/leds/led:* brightness              0664 system system
+/sys/devices/soc.0/78b6000.i2c/i2c-0/0-0030/leds/led:* blink                   0664 system system
 /sys/class/leds/lcd-backlight/max_brightness                                   0644 root system
 /sys/class/leds/lcd-backlight/brightness                                       0664 system system
 /sys/devices/soc.0/1a00000.qcom,mdss_mdp/qcom,mdss_fb_primary.126/leds/lcd-backlight max_brightness 0664 system system
 /sys/devices/soc.0/1a00000.qcom,mdss_mdp/qcom,mdss_fb_primary.126/leds/lcd-backlight brightness     0664 system system
-
-# Graphics Permissions
-/sys/devices/virtual/graphics/fb1/avi_itc             0664 system graphics
-/sys/devices/virtual/graphics/fb1/avi_cn0_1           0664 system graphics
-/sys/devices/virtual/graphics/fb1/hpd                 0664 system graphics
-/sys/devices/virtual/graphics/fb1/video_mode          0664 system graphics
-/sys/devices/virtual/graphics/fb1/vendor_name         0664 system graphics
-/sys/devices/virtual/graphics/fb1/product_description 0664 system graphics
-/sys/devices/virtual/graphics/fb1/hdcp/tp             0664 system graphics
-/sys/devices/virtual/graphics/fb2/ad                  0664 system graphics
 
 # Sensors
 /sys/devices/virtual/input/input* enable                   0660  root   input
