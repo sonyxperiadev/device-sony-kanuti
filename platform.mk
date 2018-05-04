@@ -89,12 +89,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
 
-# system prop for opengles version
-# 196609 is decimal for 0x30001 to
-# report major/minor versions as 3/1
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196609
-
 # aDSP sensors
 ## max rate
 PRODUCT_PROPERTY_OVERRIDES += \
