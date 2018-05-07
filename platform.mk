@@ -78,10 +78,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8916
 
-# Keymaster
-PRODUCT_PACKAGES += \
-    keystore.msm8916
-
 # Telephony Packages (AOSP)
 PRODUCT_PACKAGES += \
     InCallUI \
