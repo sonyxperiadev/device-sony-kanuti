@@ -13,7 +13,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := init.kanuti
 LOCAL_SRC_FILES := vendor/etc/init/init.kanuti.rc
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_STEM := init.loire
+LOCAL_MODULE_STEM := init.kanuti
 LOCAL_MODULE_SUFFIX := .rc
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
