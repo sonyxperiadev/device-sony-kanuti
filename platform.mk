@@ -80,11 +80,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8916
 
-# Telephony Packages (AOSP)
-PRODUCT_PACKAGES += \
-    InCallUI \
-    Stk
-
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
