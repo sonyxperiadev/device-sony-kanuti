@@ -18,6 +18,7 @@ PRODUCT_PLATFORM_SOD := true
 
 TARGET_BOARD_PLATFORM := msm8916
 TARGET_KERNEL_VERSION := 4.4
+KERNEL_PATH := kernel/sony/msm-4.4
 
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -33,6 +34,8 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 TARGET_USES_64_BIT_BINDER := true
 
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
@@ -41,7 +44,10 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
 
-TARGET_RECOVERY_FSTAB = $(PLATFORM_COMMON_PATH)/rootdir/fstab.kanuti
+# Serial console
+#BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x7af0000 androidboot.console=msm_serial_dm,0x7af0000
+
+TARGET_RECOVERY_FSTAB = $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/fstab.kanuti
 
 # Wi-Fi definitions for Qualcomm solution
 BOARD_HAS_QCOM_WLAN := true

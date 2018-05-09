@@ -15,6 +15,8 @@
 # Platform path
 PLATFORM_COMMON_PATH := device/sony/kanuti
 
+TARGET_LEGACY_KEYMASTER := true
+
 $(call inherit-product, device/sony/common/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
@@ -53,9 +55,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/vendor/etc/rqbalance_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/rqbalance_config.xml
 
-# Platform power configuration
+# Platform specific init
 PRODUCT_PACKAGES += \
-    init.kanuti.pwr
+    init.kanuti \
+    init.kanuti.pwr \
+    ueventd
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -76,10 +80,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8916
 
-# Keymaster
-PRODUCT_PACKAGES += \
-    keystore.msm8916
-
 # Telephony Packages (AOSP)
 PRODUCT_PACKAGES += \
     InCallUI \
@@ -88,12 +88,6 @@ PRODUCT_PACKAGES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
-
-# system prop for opengles version
-# 196609 is decimal for 0x30001 to
-# report major/minor versions as 3/1
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196609
 
 # aDSP sensors
 ## max rate
@@ -136,3 +130,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # WiFi MAC address path
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.wifi.addr_path=/sys/devices/soc/a000000.qcom,wcnss-wlan/wcnss_mac_addr
+
+# setup dm-verity configs.
+PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/7824900.sdhci/by-name/system
+$(call inherit-product, build/target/product/verity.mk)
