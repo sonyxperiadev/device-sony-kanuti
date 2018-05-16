@@ -26,7 +26,7 @@ SONY_ROOT := $(PLATFORM_COMMON_PATH)/rootdir
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/vendor/etc/aanc_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/aanc_tuning_mixer.txt
+    $(SONY_ROOT)/vendor/etc/audio_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer.txt
 
 # Media
 PRODUCT_COPY_FILES += \
