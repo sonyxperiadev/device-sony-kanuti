@@ -1,4 +1,4 @@
-ifeq (kanuti,$(TARGET_BOOTLOADER_BOARD_NAME))
+ifeq (kanuti,$(PRODUCT_PLATFORM))
 
 LOCAL_PATH := $(call my-dir)
 
